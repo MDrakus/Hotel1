@@ -12,7 +12,7 @@ api = FastAPI()
 @api.post("/user/auth/")
 async def auth_user(user_in: UserIn):
 
-    user_in_db = get_user(user_in.username)
+    user_in_db = get_user(user_in.nombre)
 
     if user_in_db == None:
         raise HTTPException(status_code=404, detail="El Hotel no existe")
